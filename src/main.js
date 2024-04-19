@@ -39,7 +39,7 @@ async function handleSearch(event) {
   event.preventDefault();
   searchTerm = event.currentTarget.elements.inputSearch.value;
   currentPage = 1;
-  totalPages = 1; // Reset total pages
+  totalPages = 1; 
   photoGallery.innerHTML = '';
   loader.style.display = 'block';
   try {
@@ -72,7 +72,7 @@ async function loadMoreImages() {
     }
   } catch (error) {
     showErrorToast(`An error occurred: ${error.message}`);
-    hideLoadMoreButton(); 
+     loadMoreButton.style.display = 'none';
   } finally {
     loader.style.display = 'none';
   }
