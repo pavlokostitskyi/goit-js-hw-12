@@ -10,6 +10,17 @@ const loader = document.querySelector('.loader');
 const photoGallery = document.querySelector('.images-place');
 const loadMoreButton = document.querySelector('.load-more');
 
+
+function showLoadMoreButton() {
+  loadMoreButton.style.display = 'block';
+}
+
+function hideLoadMoreButton() {
+  loadMoreButton.style.display = 'none';
+}
+
+
+
 let currentPage = 1;
 let searchTerm = '';
 let totalPages = 1;
@@ -83,10 +94,3 @@ function showErrorToast(message) {
   });
 }
 
-function showLoadMoreButton() {
-  loadMoreButton.style.display = 'block';
-}
-
-function hideLoadMoreButton() {
-  loadMoreButton.style.display = 'none';
-}
