@@ -43,6 +43,7 @@ async function handleSearch(event) {
     }
   } catch (error) {
     showErrorToast(`An error occurred: ${error.message}`);
+    hideLoadMoreButton();
   } finally {
     loader.style.display = 'none';
   }
@@ -56,10 +57,11 @@ async function loadMoreImages() {
     renderAndShowImages(data.hits);
     book.refresh();
     if (currentPage === totalPages) { 
-      loadMoreButton.style.display = 'none';
+      hideLoadMoreButton(); 
     }
   } catch (error) {
     showErrorToast(`An error occurred: ${error.message}`);
+    hideLoadMoreButton(); 
   } finally {
     loader.style.display = 'none';
   }
@@ -83,4 +85,8 @@ function showErrorToast(message) {
 
 function showLoadMoreButton() {
   loadMoreButton.style.display = 'block';
+}
+
+function hideLoadMoreButton() {
+  loadMoreButton.style.display = 'none';
 }
